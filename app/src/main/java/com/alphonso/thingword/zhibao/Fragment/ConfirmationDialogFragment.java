@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alphonso.thingword.zhibao;
+package com.alphonso.thingword.zhibao.Fragment;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
