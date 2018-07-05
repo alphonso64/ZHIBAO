@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="类别">
+        <item>粮油</item>
+        <item>蔬菜</item>
+        <item>水果</item>
+        <item>经济作物</item>
+        <item>林木</item>
+    </string-array>
+    <string-array name="粮油">
+        <item>水稻</item>
+        <item>大麦</item>
+        <item>小麦</item>
+        <item>玉米</item>
+        <item>番薯</item>
+        <item>马铃薯</item>
+        <item>油菜</item>
+        <item>大豆</item>
+        <item>花生</item>
+        <item>芝麻</item>
+        <item>向日葵</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="蔬菜">
+        <item>十字花科</item>
+        <item>茄科</item>
+        <item>葫芦科</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="水果">
+        <item>蔷薇科</item>
+        <item>芸香科</item>
+        <item>热带水果</item>
+        <item>其他</item>
+    </string-array>
+    <!--
+    <string-array name="蔬菜">
+        <item>十字花科(青菜、萝卜、花菜、甘蓝等)</item>
+        <item>茄科(番茄、茄子、辣椒等)</item>
+        <item>葫芦科(黄瓜、南瓜、冬瓜、葫芦等)</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="水果">
+        <item>蔷薇科(苹果、桃、梨、枇杷、杨梅、枣等)</item>
+        <item>芸香科(柑橘类)</item>
+        <item>热带水果</item>
+        <item>其他</item>
+    </string-array> -->
+    <string-array name="经济作物">
+        <item>棉花</item>
+        <item>麻类</item>
+        <item>茶</item>
+        <item>桑</item>
+        <item>烟草</item>
+        <item>药用</item>
+        <item>植物</item>
+        <item>甘蔗</item>
+        <item>甜菜</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="林木">
+        <item>核桃</item>
+        <item>香榧</item>
+        <item>板栗</item>
+        <item>银杏</item>
+        <item>油茶</item>
+        <item>花卉</item>
+        <item>苗木</item>
+        <item>其他</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

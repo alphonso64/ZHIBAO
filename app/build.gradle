@@ -31,6 +31,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':library')
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+    compile 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
 }
 
 configurations.all {

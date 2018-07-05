@@ -11,8 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.alphonso.thingword.zhibao.Fragment.PickerFragment;
 import com.alphonso.thingword.zhibao.Fragment.TextFragment;
 import com.alphonso.thingword.zhibao.R;
+import com.alphonso.thingword.zhibao.View.NoSrollViewPager;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
         int index = 0;
         mFragments.add(TextFragment.newInstance("1"));
-        mFragments.add(TextFragment.newInstance("2"));
+        mFragments.add(PickerFragment.newInstance("2"));
         mFragments.add(TextFragment.newInstance("3"));
 
     }

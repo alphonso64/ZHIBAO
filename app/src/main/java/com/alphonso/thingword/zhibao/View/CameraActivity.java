@@ -1,6 +1,7 @@
 package com.alphonso.thingword.zhibao.View;
 
 import android.Manifest;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Handler;
@@ -40,6 +41,11 @@ public class CameraActivity extends AppCompatActivity {
             mCameraView.addCallback(mCallback);
         }
 
+        SharedPreferences sharedPreferences = getSharedPreferences(this.getPackageName(), this.MODE_PRIVATE);
+        String type = sharedPreferences.getString("type", "");
+        String detail = sharedPreferences.getString("detail", "");
+        Log.e("camera",type+" "+detail);
+        Log.e("camera","camera");
 
     }
 
@@ -59,6 +65,8 @@ public class CameraActivity extends AppCompatActivity {
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
         }
+
+
     }
 
     @Override
