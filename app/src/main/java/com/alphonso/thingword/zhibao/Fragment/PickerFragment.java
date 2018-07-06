@@ -6,19 +6,18 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.aigestudio.wheelpicker.WheelPicker;
-import com.alphonso.thingword.zhibao.PlantType;
+import com.alphonso.thingword.zhibao.util.PlantType;
 import com.alphonso.thingword.zhibao.R;
 import com.alphonso.thingword.zhibao.View.CameraActivity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +33,7 @@ public class PickerFragment extends Fragment {
     List<List<String>> ls_detail;
     PlantType plantType;
     Button btn;
+    Toolbar toolbar;
 
 
     @Nullable
@@ -43,12 +43,38 @@ public class PickerFragment extends Fragment {
         wheelPicker = (WheelPicker) view.findViewById(R.id.wheelpicker);
         wheelPicker_detail = (WheelPicker) view.findViewById(R.id.wheelpicker2);
         btn = (Button) view.findViewById(R.id.button_camera);
+        toolbar = view.findViewById(R.id.pick_toolbar);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        toolbar.setTitle("选择作物");
+
+        toolbar.inflateMenu(R.menu.pick);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.start_camera:
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("type", plantType.getType());
+                        editor.putInt("type_index",plantType.getType_index());
+                        editor.putString("detail", plantType.getDetail());
+                        editor.putInt("detail_index",plantType.getDetail_index());
+                        editor.commit();
+
+                        Intent intent = new Intent(getActivity(), CameraActivity.class);
+                        getActivity().startActivity(intent);
+                        break;
+                    default:
+                }
+                return false;
+            }
+        });
 
         Resources res =getResources();
         ls_type = Arrays.asList(res.getStringArray(R.array.类别));
@@ -96,22 +122,22 @@ public class PickerFragment extends Fragment {
             }
         });
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("type", plantType.getType());
-                editor.putInt("type_index",plantType.getType_index());
-                editor.putString("detail", plantType.getDetail());
-                editor.putInt("detail_index",plantType.getDetail_index());
-                editor.commit();
-
-                Intent intent = new Intent(getActivity(), CameraActivity.class);
-                getActivity().startActivity(intent);
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                editor.putString("type", plantType.getType());
+//                editor.putInt("type_index",plantType.getType_index());
+//                editor.putString("detail", plantType.getDetail());
+//                editor.putInt("detail_index",plantType.getDetail_index());
+//                editor.commit();
+//
+//                Intent intent = new Intent(getActivity(), CameraActivity.class);
+//                getActivity().startActivity(intent);
+//            }
+//        });
 
     }
 

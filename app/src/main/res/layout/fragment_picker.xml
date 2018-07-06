@@ -5,12 +5,26 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pick_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ToolbarTheme" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         >
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +34,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_weight="1">
             <com.aigestudio.wheelpicker.WheelPicker
                 android:id="@+id/wheelpicker"
@@ -32,12 +46,18 @@
                 aigestudio:wheel_selected_item_text_color="@color/colorPrimary"
                 aigestudio:wheel_indicator="true"
                 aigestudio:wheel_indicator_color="@color/black"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_weight="1">
 
 
@@ -51,10 +71,13 @@
                 aigestudio:wheel_visible_item_count="5"
                 aigestudio:wheel_selected_item_text_color="@color/colorPrimary"
                 aigestudio:wheel_indicator="true"
-                aigestudio:wheel_indicator_color="@color/black"/>
-
+                aigestudio:wheel_indicator_color="@color/black"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
         </LinearLayout>
-
     </LinearLayout>
 
 
@@ -63,15 +86,17 @@
         android:layout_height="0dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
+        android:paddingTop="30dp"
         android:layout_weight="1">
 
         <Button
-
             android:id="@+id/button_camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="确定" />
+            android:text="确定"
+            android:visibility="invisible"/>
+
     </LinearLayout>
 
 </LinearLayout>

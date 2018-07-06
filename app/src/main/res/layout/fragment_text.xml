@@ -6,16 +6,18 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <com.aigestudio.wheelpicker.WheelPicker
-        android:id="@+id/wheelpicker"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/text_toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        aigestudio:wheel_cyclic="true"
-        aigestudio:wheel_selected_item_text_color="@color/colorPrimary"/>
-
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/text_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
