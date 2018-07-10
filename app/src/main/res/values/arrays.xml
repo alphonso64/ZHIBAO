@@ -69,6 +69,18 @@
         <item>其他</item>
     </string-array>
 
+    <string-array name="结果">
+        <item>白背飞虱</item>
+        <item>白叶枯</item>
+        <item>大螟</item>
+        <item>稻曲病</item>
+        <item>稻瘟病</item>
+        <item>稻纵卷叶螟</item>
+        <item>二化螟</item>
+        <item>褐飞虱</item>
+        <item>纹枯病</item>
+    </string-array>
+
 
 
 

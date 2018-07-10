@@ -6,6 +6,7 @@ package com.alphonso.thingword.zhibao;
 
 import android.util.Log;
 
+import com.alphonso.thingword.zhibao.util.PlantType;
 import com.litesuits.http.LiteHttp;
 import com.litesuits.http.impl.huc.HttpUrlClient;
 import com.litesuits.http.listener.HttpListener;
@@ -15,6 +16,7 @@ import com.litesuits.http.request.content.FileBody;
 import com.litesuits.http.request.content.JsonBody;
 import com.litesuits.http.request.content.multi.FilePart;
 import com.litesuits.http.request.content.multi.MultipartBody;
+import com.litesuits.http.request.content.multi.StringPart;
 import com.litesuits.http.request.param.HttpMethods;
 import com.litesuits.http.response.Response;
 
@@ -54,18 +56,23 @@ public class HttpClient {
         return single;
     }
 
-    public void checkLogin(HttpListener<String> listener,String path) {
+    public void checkLogin(HttpListener<String> listener, String path, PlantType plant) {
 
 //        JSONObject object = new JSONObject();
 //        try {
-//            object.put("name", "213213");
+//            object.put("type", plant.getType());
+//            object.put("type_index", plant.getType_index());
+//            object.put("detail", plant.getDetail());
+//            object.put("detail_index", plant.getDetail_index());
 //        } catch (JSONException e) {
 //            return;
 //        }
         Log.e("aa",path);
 
         MultipartBody body = new MultipartBody();
-        body.addPart(new FilePart("filepath", new File(path), "image/jpeg"));
+        body.addPart(new FilePart("filepath", new File(path), "image/jpeg"))
+        .addPart(new StringPart("type",String.valueOf(plant.getType_index())))
+        .addPart(new StringPart("detail",String.valueOf(plant.getDetail_index())));
 
 
         StringRequest stringRequest = new StringRequest(DOMAIN_NAME+LOGIN_URL)
